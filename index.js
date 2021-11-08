@@ -1,25 +1,23 @@
-import { Intents, Message } from "discord.js";
-import Discordjs from "discord.js";
+import {Intents, Message} from "discord.js";
+import Discordjs from "discord.js"
+import dotenv from "dotenv"
+//envを読み込むための準備
+dotenv.config()
 
-import dotenv from "dotenv";
 
-dotenv.config();
-
-const client = new Discordjs.Client({
+const client =  new Discordjs.Client({
     intents:[
         Intents.FLAGS.GUILDS,
-        Intents.FLAGS.GUILDS_MESSAGES
+        Intents.FLAGS.GUILD_MESSAGES
     ]
-});
+})
 
-client.on('ready', () => {
-    console.log(`${client.user.tag} でログインしています。`)
-  })
 
-client.on("messageCreate", async msg => {
-    if(msg.content === "!hey"){
-        msg.reply("hey!");
+
+client.on("message", (msg) => {
+    if (msg.content === "hello"){
+        msg.reply("hello!")
     }
 })
 
-client.login(process.env.TOKEN);
+client.login(process.env.TOKEN)
