@@ -1,5 +1,5 @@
-import { Intents, Massage } from "discord.js";
-import Discordjs from "discord,js";
+import { Intents, Message } from "discord.js";
+import Discordjs from "discord.js";
 
 import dotenv from "dotenv";
 
